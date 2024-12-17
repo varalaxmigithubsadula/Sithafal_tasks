@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Query System</title>
+    <link rel="stylesheet" href="static/css/styles.css">  <!-- Link to the styles.css file -->
+</head>
+<body>
+    <div class="container">
+        <h1>Chat With PDF Using RAG Pipeline</h1>
+
+        <!-- Upload PDF Section -->
+        <div class="section">
+            <h3>Upload PDF:</h3>
+            <input type="file" id="pdfFile" class="input-field">
+            <button onclick="uploadPDF()" class="button">Upload</button>
+            <p id="uploadStatus"></p>
+        </div>
+
+        <!-- Query Section -->
+        <div class="section">
+            <h3>Enter Query:</h3>
+            <textarea id="queryInput" class="input-field" rows="4" placeholder="Ask your question..."></textarea><br>
+            <button onclick="getAnswer()" class="button">Get Answer</button>
+        </div>
+
+        <!-- Response Section -->
+        <div class="section">
+            <h3>Response:</h3>
+            <div id="response"></div>
+        </div>
+    </div>
+
+    <script>
+        // Function to upload PDF
+        function uploadPDF() {
+            const fileInput = document.getElementById('pdfFile');
+            const formData = new FormData();
+            formData.append('file', fileInput.files[0]);
+
+            fetch('/upload', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('uploadStatus').innerText = data.message || data.error;
+            })
+            .catch(error => console.error('Error:', error));
+        }
+
+        // Function to send query and get response
+        function getAnswer() {
+            const query = document.getElementById('queryInput').value;
+
+            fetch('/query', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ query: query })
+            })
+            .then(response => response.json())
+            .then(data => {
+                const response = data.response || data.error;
+                const responseDiv = document.getElementById('response');
+
+                // Check if the response is an array (for table data)
+                if (Array.isArray(response)) {
+                    let tableHTML = '<table>';
+                    // Assuming the first row is the header row
+                    if (response.length > 0 && Array.isArray(response[0])) {
+                        tableHTML += '<thead><tr>';
+                        response[0].forEach((header) => {
+                            tableHTML += `<th>${header}</th>`;
+                        });
+                        tableHTML += '</tr></thead><tbody>';
+
+                        // Add the data rows
+                        for (let i = 1; i < response.length; i++) {
+                            tableHTML += '<tr>';
+                            response[i].forEach((cell) => {
+                                tableHTML += `<td>${cell}</td>`;
+                            });
+                            tableHTML += '</tr>';
+                        }
+                        tableHTML += '</tbody>';
+                    } else {
+                        // If the response doesn't have headers, treat it as raw data rows
+                        response.forEach(row => {
+                            tableHTML += '<tr>';
+                            row.forEach(cell => {
+                                tableHTML += `<td>${cell}</td>`;
+                            });
+                            tableHTML += '</tr>';
+                        });
+                    }
+                    tableHTML += '</table>';
+                    responseDiv.innerHTML = tableHTML; // Insert the table HTML
+                } else {
+                    // If not an array, just display the response as text
+                    responseDiv.innerText = response;
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>
