@@ -36,4 +36,6 @@ Start the Flask development server:
 python app.py
 Access the app:
 Open your browser and navigate to http://127.0.0.1:5000/ to view the app.
-Below are some snapshots of the output
+
+
+Below are some snapshots of the output:
