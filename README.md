@@ -1,6 +1,8 @@
 # Sithafal_tasks
 Chat with PDF using RAG Pipeline:
      This project allows users to upload PDF files, extract text from the PDFs, and query the document for specific information. It also includes functionality to extract tables from specific pages of the uploaded PDF. The app uses machine learning models to process queries using TF-IDF vectorization and cosine similarity for matching text content.
+
+
 Check this video for clear understanding:
 
 Features:
