@@ -19,7 +19,9 @@ Large Language Model (Optional) for response generation.
 Directory Structure:
 
 Task_2/
-│
+
+
+
 ├── scrape_and_embed.py      # Crawls websites, scrapes data, and generates embeddings
 
 ├── query_retrieve.py        # Accepts user queries and retrieves relevant documents
