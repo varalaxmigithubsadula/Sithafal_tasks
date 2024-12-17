@@ -41,3 +41,6 @@ Open your browser and navigate to http://127.0.0.1:5000/ to view the app.
 Below are some snapshots of the output:
 ![image](https://github.com/user-attachments/assets/5ddc6c27-3c2a-4548-bd5f-aaf891fae351)
 
+![image](https://github.com/user-attachments/assets/ca24857f-4142-4091-b39a-619a4046f4b1)
+
+
