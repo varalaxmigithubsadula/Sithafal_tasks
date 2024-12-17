@@ -21,10 +21,15 @@ Directory Structure:
 Task_2/
 │
 ├── scrape_and_embed.py      # Crawls websites, scrapes data, and generates embeddings
+
 ├── query_retrieve.py        # Accepts user queries and retrieves relevant documents
+
 ├── generate_response.py     # (Optional) Generates detailed responses using an LLM
+
 ├── documents.txt            # Raw scraped website content
+
 ├── website_embeddings.index # FAISS index storing embeddings
+
 └── retrieved_docs.txt       # Contains top retrieved documents
 
 How to Run the Project:
