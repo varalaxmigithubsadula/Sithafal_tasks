@@ -1,6 +1,6 @@
 # Sithafal_tasks
 Chat with PDF using RAG Pipeline:
-This project allows users to upload PDF files, extract text from the PDFs, and query the document for specific information. It also includes functionality to extract tables from specific pages of the uploaded PDF. The app uses machine learning models to process queries using TF-IDF vectorization and cosine similarity for matching text content.
+     This project allows users to upload PDF files, extract text from the PDFs, and query the document for specific information. It also includes functionality to extract tables from specific pages of the uploaded PDF. The app uses machine learning models to process queries using TF-IDF vectorization and cosine similarity for matching text content.
 
 Features:
 
@@ -34,5 +34,6 @@ Run the app:
 Start the Flask development server:
 
 python app.py
-Access the app: Open your browser and navigate to http://127.0.0.1:5000/ to view the app.
+Access the app:
+Open your browser and navigate to http://127.0.0.1:5000/ to view the app.
 Below are some snapshots of the output
