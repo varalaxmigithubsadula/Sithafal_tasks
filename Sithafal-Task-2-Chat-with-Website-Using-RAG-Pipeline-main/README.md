@@ -64,3 +64,6 @@ Example Queries
 Below are the Snapshots of the Project's Output:
 
 After Executing python scrape_and_embed.py file
+
+![image](https://github.com/user-attachments/assets/e2ceec42-e2fd-4c49-b9ad-464d08ad651e)
+
