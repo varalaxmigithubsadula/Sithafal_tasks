@@ -69,4 +69,7 @@ After Executing python scrape_and_embed.py file
 
 ![image](https://github.com/user-attachments/assets/aaff38c5-1dfe-4c07-822d-181edec8f5ff)
 
+![image](https://github.com/user-attachments/assets/4f27ee33-5975-4fc2-8f3a-99cb47c27170)
+
+
 
