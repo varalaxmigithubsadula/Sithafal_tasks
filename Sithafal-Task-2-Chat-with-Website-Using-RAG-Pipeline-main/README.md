@@ -73,6 +73,8 @@ Below are the Snapshots of the Project's Output:
 
 ![image](https://github.com/user-attachments/assets/aaff38c5-1dfe-4c07-822d-181edec8f5ff)
 
+3.After executing python generate_response.py file
+
 ![image](https://github.com/user-attachments/assets/4f27ee33-5975-4fc2-8f3a-99cb47c27170)
 
 
