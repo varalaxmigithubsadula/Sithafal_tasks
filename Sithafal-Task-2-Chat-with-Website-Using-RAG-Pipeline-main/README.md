@@ -63,9 +63,13 @@ Example Queries
    
 Below are the Snapshots of the Project's Output:
 
-After Executing python scrape_and_embed.py file
+1.After Executing python scrape_and_embed.py file
 
 ![image](https://github.com/user-attachments/assets/e2ceec42-e2fd-4c49-b9ad-464d08ad651e)
+
+2.After running python query_retrive.py file
+
+
 
 ![image](https://github.com/user-attachments/assets/aaff38c5-1dfe-4c07-822d-181edec8f5ff)
 
